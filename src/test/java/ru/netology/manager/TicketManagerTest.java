@@ -3,7 +3,7 @@ package ru.netology.manager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Ticket;
-import ru.netology.domain.TicketByPriceAscComparator;
+import ru.netology.domain.TicketByTimeAscComparator;
 import ru.netology.repository.TicketRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,7 +54,7 @@ class TicketManagerTest {
 
     @Test
     void shouldFindFaster(){
-        Ticket[] actual = manager.findFromAndToAndFaster("DME", "KZN", new TicketByPriceAscComparator());
+        Ticket[] actual = manager.findFromAndToAndFaster("DME", "KZN", new TicketByTimeAscComparator());
         Ticket[] expected = new Ticket[] {ticket1, ticket2};
         assertArrayEquals(expected, actual);
     }
